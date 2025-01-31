@@ -1,0 +1,15 @@
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.side-bar-container {
+  width: 5%; /* Garante que a sidebar mantenha o tamanho */
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+  overflow: auto;
+}
