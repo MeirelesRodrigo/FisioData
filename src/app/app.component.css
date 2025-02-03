@@ -1,15 +1,20 @@
-.layout {
+.navbar{
   display: flex;
-  height: 100vh;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
-.side-bar-container {
-  width: 5%; /* Garante que a sidebar mantenha o tamanho */
+.navbar a{
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
-  background-color: #f4f4f4;
-  overflow: auto;
+.btn-custom-green {
+  background-color: #597445 ; /* Verde do Bootstrap */
+  color: #ffffff;
+  border: none;
+}
+
+.btn-custom-green:hover {
+  background-color: #3d532d; /* Um verde mais escuro para o efeito hover */
 }

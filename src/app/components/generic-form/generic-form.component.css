@@ -1,0 +1,49 @@
+.form-check-input:checked {
+  background-color: #597445 !important; /* Fundo verde */
+  border-color: #597445 !important; /* Borda verde */
+}
+
+.title h2 {
+  margin-left: 20px;
+  font-size: 24px;
+  color: #597445;
+}
+form{
+  margin: 20px  ;
+}
+
+.title hr {
+  margin-left: 10px 0;
+  border-color: #ccc;
+}
+
+form h5 {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #597445;
+}
+
+.form-title-info{
+  margin-top: 10px;
+}
+
+.btn-custom-green {
+  background-color: #597445 ; /* Verde do Bootstrap */
+  color: #ffffff;
+  border: none;
+}
+
+.btn-custom-green:hover {
+  background-color: #3d532d; /* Um verde mais escuro para o efeito hover */
+}
+
+.btn-custom-light-green {
+  background-color: #86a371 ; /* Verde do Bootstrap */
+  color: #ffffff;
+  border: none;
+}
+
+.btn-custom-light-green:hover {
+  background-color: #3d532d; /* Um verde mais escuro para o efeito hover */
+}

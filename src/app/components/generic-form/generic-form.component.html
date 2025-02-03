@@ -1,1 +1,228 @@
-<p>generic-form works!</p>
+
+<div class="title mt-3">
+  <h2>Admissão Paciente</h2>
+  <hr>
+</div>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-title-info">
+    <h5>Informações Gerais</h5>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="João da Silva" formControlName="name">
+        <div *ngIf="form.get('name')?.hasError && form.get('name')?.touched">
+          <small class="error-mensage" *ngIf="form.get('name')?.errors?.['required']">Campo obrigatório </small>
+          <small class="error-mensage" *ngIf="form.get('name')?.errors?.['minlength']">Campo deve conter no mínimo 3 caracteres</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="age">Idade</label>
+        <input type="number" class="form-control" id="age" name="age" placeholder="50" min="0" formControlName="age">
+        <div *ngIf="form.get('age')?.hasError && form.get('age')?.touched">
+          <small class="error-mensage" *ngIf="form.get('age')?.errors?.['required']">Campo obrigatório </small>
+          <small class="error-mensage" *ngIf="form.get('age')?.errors?.['max']">Idade Inválida </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="gender">Sexo</label>
+        <select class="form-select" id="gender" name="gender" formControlName="gender">
+          <option value="" selected disabled>Selecione...</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+        <div *ngIf="form.get('gender')?.hasError && form.get('gender')?.touched">
+          <small class="error-mensage" *ngIf="form.get('gender')?.errors?.['required']">Campo obrigatório </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <div class="form-group">
+        <label for="department">Setor</label>
+        <select class="form-select" id="department" name="department" formControlName="department">
+          <option value="" selected disabled>Selecione...</option>
+          <option value="P1-Matriz">P1 - Matriz</option>
+          <option value="2º-Matriz">2º - Matriz</option>
+          <option value="3º-Matriz">3º - Matriz</option>
+          <option value="3º-Oscar">3º - Oscar</option>
+          <option value="4º-Oscar">4º - Oscar</option>
+          <option value="5º-Oscar">5º - Oscar</option>
+          <option value="6º-Oscar">6º - Oscar</option>
+        </select>
+        <div *ngIf="form.get('department')?.hasError && form.get('department')?.touched">
+          <small class="error-mensage" *ngIf="form.get('department')?.errors?.['required']">Campo obrigatório </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <label for="insurance">Convênio</label>
+      <select class="form-select"  for="insurance" id="insurance" formControlName="insurance">
+        <option value="" selected disabled>Selecione...</option>
+        <option value="Samel" >Samel</option>
+        <option value="Fusex">Fusex</option>
+        <option value="Sul-America">Sul-America</option>
+        <option value="Bradesco">Bradesco</option>
+        <option value="Amil">Amil</option>
+        <option value="Postal">Postal</option>
+        <option value="Particular">Particular</option>
+        <option value="Autorização da Diretoria">Autorização da Diretoria</option>
+        <option value="Affeam">Affeam</option>
+        <option value="Gama">Gama</option>
+      </select>
+      <div *ngIf="form.get('insurance')?.hasError && form.get('insurance')?.touched">
+        <small class="error-mensage" *ngIf="form.get('insurance')?.errors?.['required']">Campo obrigatório </small>
+      </div>
+    </div>
+
+
+    <div class="col-md-2">
+      <label for="admissionDate">Dt Admissão</label>
+      <input type="date"  id="admissionDate" name="admissionDate" class="form-control" formControlName="admissionDate">
+      <div *ngIf="form.get('admissionDate')?.hasError && form.get('admissionDate')?.touched">
+        <small class="error-mensage" *ngIf="form.get('admissionDate')?.errors?.['required']">Campo obrigatório </small>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+      <label for="dischargeDate">Dt Alta</label>
+      <input type="date"  id="dischargeDate" name="dischargeDate" class="form-control" formControlName="dischargeDate">
+      <div *ngIf="form.get('dischargeDate')?.hasError && form.get('dischargeDate')?.touched">
+        <small class="error-mensage" *ngIf="form.get('dischargeDate')?.errors?.['required']">Campo obrigatório </small>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="dischargeStatus">Alta / Status Paciente</label>
+      <select class="form-select" for="dischargeStatus" name="dischargeStatus" formControlName="dischargeStatus">
+        <option value="" selected disabled>Selecione...</option>
+        <option value="Internado">Paciente Internado</option>
+        <option value="Alta-Melhorada">Alta melhorada</option>
+        <option value="Contra-Indicado">Contra-Indicação</option>
+        <option value="Trans-Boulevard">Transferência - Boulevard</option>
+        <option value="Trans-UTI">Transferência - UTI</option>
+        <option value="Trans-CC">Transferência - CC</option>
+        <option value="Obito">Óbito</option>
+        <option value="Evasao">Evasão</option>
+      </select>
+      <div *ngIf="form.get('dischargeStatus')?.hasError && form.get('dischargeStatus')?.touched">
+        <small class="error-mensage" *ngIf="form.get('dischargeStatus')?.errors?.['required']">Campo obrigatório </small>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="form-title-info">
+      <h5>Avaliação do Paciente</h5>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <label for="specialist">Especialidade</label>
+        <select class="form-select" form="specialist" name="specialist" formControlName="specialist">
+          <option value="" selected disabled>Selecione...</option>
+          <option value="Clinico">Clínico</option>
+          <option value="Cirurgia">Cirurgia</option>
+          <option value="Neurologia">Neurologia</option>
+          <option value="Cardiologia">Cardiologia</option>
+          <option value="Ortopedia">Ortopedia</option>
+        </select>
+        <div *ngIf="form.get('specialist')?.hasError && form.get('specialist')?.touched">
+          <small class="error-mensage" *ngIf="form.get('specialist')?.errors?.['required']">Campo obrigatório </small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="diagnoses">Diagnóstico</label>
+        <input class="form-control" type="text" id="diagnoses" name="diagnoses" placeholder="PNM Bacteriana" formControlName="diagnoses">
+        <div *ngIf="form.get('diagnoses')?.hasError && form.get('diagnoses')?.touched">
+          <small class="error-mensage" *ngIf="form.get('diagnoses')?.errors?.['required']">Campo obrigatório </small>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <label for="comorbidities">Comorbidade</label>
+        <select class="form-select" for="comorbidities" name="comorbidities" formControlName="comorbidities">
+          <option value="" selected disabled>Selecione...</option>
+          <option value="Reducao da Capacidade Motora e Respiratoria">Redução da Capacidade Motora e Respiratória</option>
+          <option value="Reducao da Capacidade  Respiratoria">Redução da Capacidade Respiratória</option>
+          <option value="Redução da Capacidade Motora">Redução da Capacidade Motora</option>
+        </select>
+        <div *ngIf="form.get('comorbidities')?.hasError && form.get('comorbidities')?.touched">
+          <small class="error-mensage" *ngIf="form.get('comorbidities')?.errors?.['required']">Campo obrigatório </small>
+        </div>
+      </div>
+
+      <div class="col-md-2">
+        <label for="mrc">MRC</label>
+        <select class="form-select" for="mrc" name="mrc" formControlName="mrc">
+          <option value="" selected disabled>Selecione...</option>
+          <option value="0">0 - Paralisa completa</option>
+          <option value="1">1 - Mínima Contração</option>
+          <option value="2">2 - Ausência de Movimento ativos contra gravidade</option>
+          <option value="3">3 - Contração fraca contra a gravidade</option>
+          <option value="4">4 - Movimento ativo contra gravidade</option>
+          <option value="5">5 - Força normal</option>
+        </select>
+        <div *ngIf="form.get('mrc')?.hasError && form.get('mrc')?.touched">
+          <small class="error-mensage" *ngIf="form.get('mrc')?.errors?.['required']">Campo obrigatório </small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-title-info">
+        <h5>Condutas</h5>
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <label for="procedures" class="form-label">Condutas / Observações </label>
+      <textarea class="form-control" id="procedures" rows="3" formControlName="procedures"></textarea>
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="motorPhysiotherapy" id="fisio-Motora" formControlName="motorPhysiotherapy">
+      <label class="form-check-label" for="fisio-Motora">
+        Fisioterapia Motora
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="respiratoryPhysiotherapy" id="fisio-respiratoria" formControlName="respiratoryPhysiotherapy">
+      <label class="form-check-label" for="fisio-respiratoria">
+        Fisioterapia Respiratoria
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="Uso-O2" id="oxygenTherapy" formControlName="oxygenTherapy">
+      <label class="form-check-label" for="oxygenTherapy">
+        Uso de O2
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="nonInvasiveVentilation" id="nonInvasiveVentilation" formControlName="nonInvasiveVentilation">
+      <label class="form-check-label" for="nonInvasiveVentilation">
+        Uso da VNI
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="therapeuticPlan" id="therapeuticPlan" formControlName="therapeuticPlan">
+      <label class="form-check-label" for="therapeuticPlan">
+        Plano Terapêutico
+      </label>
+    </div>
+
+
+
+    <input class="btn btn-custom-green mt-4" type="submit" value="Salvar" [disabled]="form.invalid">
+    <input class="btn btn-custom-light-green  ms-2 mt-4" type="reset" value="Limpar">
+  </form>

@@ -1,6 +1,10 @@
-<div class="layout">
-  <app-side-bar class="side-bar-container"></app-side-bar>
-  <div class="content">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+<nav class="navbar" style="background-color: #597445;">
+  <button class="btn btn-custom-green" routerLink="/form">
+    <fa-icon [icon]="iconsService.faCirclePlus"></fa-icon>
+  </button>
+  <button class="btn btn-custom-green" routerLink="/form">
+    <fa-icon [icon]="iconsService.faList"></fa-icon>
+  </button>
+</nav>
+
+<router-outlet></router-outlet>
