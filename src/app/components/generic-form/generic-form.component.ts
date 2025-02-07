@@ -14,14 +14,13 @@ import { Pacients } from '../../pacients';
 })
 export class GenericFormComponent implements OnInit{
   title: string = 'Cadastro'
+  idUser: string = ''
 
   constructor(private pacientsService: PacientsServiceService,
               private route : ActivatedRoute,
               private router : Router,
 
   ){}
-
-  idUser: string = ''
 
   form = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
@@ -81,7 +80,7 @@ export class GenericFormComponent implements OnInit{
         next: (response) => console.log('PACIENTE ATUALIZADO' + response),
         error: (err) => console.log(err)
       })
-      this.router.navigate([''])
+      this.router.navigate(['/listar'])
     }else{
       this.pacientsService.create(DATA).subscribe({
         next: (response) => console.log('REGISTRO CRIADO COM SUCESSO' + response),

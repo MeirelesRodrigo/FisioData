@@ -1,8 +1,8 @@
-<nav class="navbar" style="background-color: #597445;">
+<nav *ngIf="!isLoginPage"  class="navbar" style="background-color: #597445;">
   <button class="btn btn-custom-green" routerLink="/form">
     <fa-icon [icon]="iconsService.faCirclePlus"></fa-icon>
   </button>
-  <button class="btn btn-custom-green" routerLink="">
+  <button class="btn btn-custom-green" routerLink="/listar">
     <fa-icon [icon]="iconsService.faHospital"></fa-icon>
   </button>
 </nav>

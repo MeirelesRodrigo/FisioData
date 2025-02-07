@@ -1,0 +1,29 @@
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+  <div class="row w-20">
+    <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
+      <h1>FisioData</h1>
+
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label for="user" class="form-label">Usuário</label>
+          <input type="text" class="form-control" id="email" placeholder="Digite seu usuário" formControlName="user">
+          <div *ngIf="loginForm.get('user')?.hasError && loginForm.get('user')?.touched">
+            <small class="error-mensage" *ngIf="loginForm.get('user')?.errors?.['required']">Campo obrigatório</small>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha</label>
+          <input type="password" class="form-control" id="password" placeholder="Digite sua senha" formControlName="password">
+          <div *ngIf="loginForm.get('password')?.hasError && loginForm.get('password')?.touched">
+            <small class="error-mensage" *ngIf="loginForm.get('password')?.errors?.['required']">Campo obrigatório</small>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-custom-green w-100" [disabled]="loginForm.invalid">Entrar</button>
+        <p class="error-mensage" *ngIf="error">Login ou Senha Inválidos</p>
+      </form>
+    </div>
+    <div class="col-md-8 d-flex justify-content-center align-items-center">
+      <img src="login.jpg" alt="logo" class="img-fluid w-100">
+    </div>
+  </div>
+</div>

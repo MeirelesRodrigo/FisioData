@@ -83,6 +83,27 @@
       "nonInvasiveVentilation": null,
       "therapeuticPlan": true,
       "procedures": "sasasasas"
+    },
+    {
+      "name": "Novo PAciente",
+      "age": 50,
+      "gender": "masculino",
+      "department": "P1-Matriz",
+      "insurance": "Samel",
+      "admissionDate": "2025-12-31",
+      "dischargeDate": "2025-12-31",
+      "dischargeStatus": "Internado",
+      "specialist": "Clinico",
+      "diagnoses": "sasa",
+      "comorbidities": "Reducao da Capacidade Motora e Respiratoria",
+      "mrc": "0",
+      "motorPhysiotherapy": null,
+      "respiratoryPhysiotherapy": null,
+      "oxygenTherapy": null,
+      "nonInvasiveVentilation": null,
+      "therapeuticPlan": null,
+      "procedures": "",
+      "id": "d452"
     }
   ]
 }
