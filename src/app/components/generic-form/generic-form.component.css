@@ -3,19 +3,6 @@
   border-color: #597445 !important; /* Borda verde */
 }
 
-.title h2 {
-  margin-left: 20px;
-  font-size: 24px;
-  color: #597445;
-}
-form{
-  margin: 20px  ;
-}
-
-.title hr {
-  margin-left: 10px 0;
-  border-color: #ccc;
-}
 
 form h5 {
   margin-top: 20px;
