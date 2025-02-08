@@ -222,5 +222,8 @@
     </div>
 
     <input class="btn btn-custom-green mt-4" type="submit" value="Salvar" [disabled]="form.invalid">
-    <input class="btn btn-custom-light-green  ms-2 mt-4" type="reset" value="Limpar">
+    <input class="btn btn-custom-light-green  ms-2 mt-4" type="reset" value="Limpar" [disabled]="flag == true">
   </form>
+
+
+  <p-toast position="bottom-right" pRipple key="br"></p-toast>
