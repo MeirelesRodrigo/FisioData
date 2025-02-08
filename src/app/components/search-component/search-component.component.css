@@ -1,0 +1,14 @@
+.btn-custom-green {
+  background-color: #597445 ; /* Verde do Bootstrap */
+  color: #ffffff;
+  border: none;
+}
+
+.btn-custom-green:hover {
+  background-color: #3d532d; /* Um verde mais escuro para o efeito hover */
+}
+.btn-custom-light-green {
+  background-color: #86a371 ; /* Verde do Bootstrap */
+  color: #ffffff;
+  border: none;
+}

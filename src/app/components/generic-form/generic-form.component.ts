@@ -5,20 +5,27 @@ import { PacientsServiceService } from '../../services/pacients/pacients-service
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pacients } from '../../pacients';
 
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+
 
 @Component({
   selector: 'app-generic-form',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,ToastModule, ButtonModule, RippleModule],
   templateUrl: './generic-form.component.html',
   styleUrl: './generic-form.component.css'
 })
 export class GenericFormComponent implements OnInit{
   title: string = 'Cadastro'
   idUser: string = ''
+  flag: boolean = false
 
   constructor(private pacientsService: PacientsServiceService,
               private route : ActivatedRoute,
               private router : Router,
+              private messageService: MessageService
 
   ){}
 
@@ -48,6 +55,7 @@ export class GenericFormComponent implements OnInit{
     this.idUser = this.route.snapshot.paramMap.get('id') || ''
     if(this.idUser){
       this.title = 'Editar'
+      this.flag = true
       this.pacientsService.listPacientById(this.idUser).subscribe((pacient: Pacients) => {
         this.form.patchValue({
           name: pacient.name,
@@ -80,13 +88,18 @@ export class GenericFormComponent implements OnInit{
         next: (response) => console.log('PACIENTE ATUALIZADO' + response),
         error: (err) => console.log(err)
       })
-      this.router.navigate(['/listar'])
+      this.showMessageSucess();
+      // this.router.navigate(['/listar'])
     }else{
       this.pacientsService.create(DATA).subscribe({
         next: (response) => console.log('REGISTRO CRIADO COM SUCESSO' + response),
         error: (err) => console.log(err)
       })
+      this.showMessageSucess();
       this.form.reset()
     }
+  }
+  showMessageSucess() {
+    this.messageService.add({ severity: 'success', summary: 'Sucesso', detail: 'Dados salvos com sucesso', key: 'br', life: 3000 });
   }
 }

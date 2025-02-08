@@ -1,0 +1,70 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        Fitros
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse hide">
+      <div class="accordion-body">
+        <form [formGroup]="filterForm">
+          <div class="row">
+            <div class="form-group col-md-2">
+              <div class="form-group">
+                <label>Nome</label>
+                <input type="text" class="form-control" placeholder="Nome do Paciente" formControlName="name">
+              </div>
+            </div>
+
+            <div class="form-group col-md-2">
+              <div class="form-group">
+                <label for="department">Setor</label>
+                  <select class="form-select" id="department" name="department" formControlName="department">
+                  <option value="" selected disabled>Selecione...</option>
+                  <option value="P1-Matriz">P1 - Matriz</option>
+                  <option value="2º-Matriz">2º - Matriz</option>
+                  <option value="3º-Matriz">3º - Matriz</option>
+                  <option value="3º-Oscar">3º - Oscar</option>
+                  <option value="4º-Oscar">4º - Oscar</option>
+                  <option value="5º-Oscar">5º - Oscar</option>
+                  <option value="6º-Oscar">6º - Oscar</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="admissionDate">Período de internação (De)</label>
+              <input type="date"  id="admissionDate" name="admissionDate" class="form-control" formControlName="internacaoStart">
+            </div>
+
+
+            <div class="col-md-3">
+              <label for="dischargeDate">Período de internação (Até)</label>
+              <input type="date"  id="dischargeDate" name="dischargeDate" class="form-control" formControlName="internacaoEnd">
+            </div>
+
+            <div class="col-md-2">
+              <label for="dischargeStatus">Alta / Status Paciente</label>
+              <select class="form-select" for="dischargeStatus" name="dischargeStatus"  formControlName="dischargeStatus">
+                <option value="" selected disabled>Selecione...</option>
+                <option value="Internado">Paciente Internado</option>
+                <option value="Alta-Melhorada">Alta melhorada</option>
+                <option value="Contra-Indicado">Contra-Indicação</option>
+                <option value="Trans-Boulevard">Transferência - Boulevard</option>
+                <option value="Trans-UTI">Transferência - UTI</option>
+                <option value="Trans-CC">Transferência - CC</option>
+                <option value="Obito">Óbito</option>
+                <option value="Evasao">Evasão</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-end mt-2">
+            <button class="btn btn-custom-light-green" (click)="onClear()" value="Limpar">Limpar</button>
+            <button class="btn btn-custom-green ms-2" (click)="onSearch()" >Pesquisar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
