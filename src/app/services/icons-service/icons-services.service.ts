@@ -1,5 +1,11 @@
 import { Injectable } from '@angular/core';
-import { faCirclePlus, faList, faBars, faHospital, faHouseChimneyCrack, faReceipt } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlus,
+         faList,
+         faBars,
+         faHospital,
+         faHouseChimneyCrack,
+         faReceipt,
+         faChartPie } from '@fortawesome/free-solid-svg-icons';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +17,7 @@ export class IconsServicesService {
   faHospital = faHospital
   faHouseChimneyCrack = faHouseChimneyCrack
   faReceipt = faReceipt
+  faChartPie = faChartPie
 
   constructor() { }
 }

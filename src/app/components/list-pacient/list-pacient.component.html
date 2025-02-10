@@ -3,7 +3,6 @@
   <hr>
 </div>
 
-
 <app-search-component
 (search)="searchPacients($event)"
 (clear)="clearFilters()"
@@ -33,18 +32,37 @@
         <td>{{item.insurance}}</td>
         <td>{{item.diagnoses}}</td>
         <td><input class="form-check-input" [checked]="item.therapeuticPlan"  type="checkbox" value="therapeuticPlan" id="therapeuticPlan"></td>
-        <!-- <td>{{item.therapeuticPlan}}</td> -->
         <td>{{item.admissionDate | date: "dd/MM/yyyy"}}</td>
         <td>{{item.dischargeDate | date: "dd/MM/yyyy"}}</td>
         <td>{{item.dischargeStatus}}</td>
         <td>
-          <button class="btn btn-action-custom-green">
-            <fa-icon [icon]="IconsService.faHouseChimneyCrack" title="Gerar Alta"></fa-icon>
-          </button>
-          <button [routerLink]="['/form', item.id]" class="btn btn-action-custom-green ms-2">
-            <fa-icon [icon]="IconsService.faReceipt" title="Editar"></fa-icon> Editar
-          </button>
+          <button class="btn btn-action-custom-green ms-2" (click)="showEditModal(item.id)"> <fa-icon [icon]="IconsService.faReceipt" title="Editar"></fa-icon> Editar </button>
+
+          <button class="btn btn-action-custom-green ms-2" (click)="showDetailModal(item.id)"> <fa-icon [icon]="IconsService.faHouseChimneyCrack" title="Editar"></fa-icon> Detalhes </button>
         </td>
       </tr>
     </table>
   </div>
+
+
+<p-dialog
+  [modal]="false"
+  [(visible)]="editModalVisible"
+  [style]="{ width: '50rem', backgroundColor: 'white'}"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  >
+  <div style="color: gray">
+    <app-generic-form *ngIf="itemSelect" [itemId]="itemSelect"></app-generic-form>
+  </div>
+</p-dialog>
+
+<p-dialog
+  [modal]="false"
+  [(visible)]="detailModalVisible"
+  [style]="{ width: '50rem', backgroundColor: 'white'}"
+  [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+  >
+  <div style="color: gray">
+     <app-detail-component *ngIf="detailModalVisible" [itemId]="itemSelect"></app-detail-component>
+  </div>
+</p-dialog>

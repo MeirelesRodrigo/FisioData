@@ -87,7 +87,7 @@
 
 
     <div class="col-md-2">
-      <label for="admissionDate">Dt Admissão</label>
+      <label for="admissionDate">Dt Adm</label>
       <input type="date"  id="admissionDate" name="admissionDate" class="form-control" formControlName="admissionDate">
       <div *ngIf="form.get('admissionDate')?.hasError && form.get('admissionDate')?.touched">
         <small class="error-mensage" *ngIf="form.get('admissionDate')?.errors?.['required']">Campo obrigatório </small>
