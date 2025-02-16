@@ -1,60 +1,69 @@
-# FioData
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+# FisioData v 1.0
 
-## Development server
+📌 Sobre o Projeto
+- O FisioData é um sistema desenvolvido para facilitar o acompanhamento de pacientes da equipe de fisioterapia hospitalar, proporcionando uma gestão eficiente de informações, registro de evoluções, monitoramento e relatórios com gráficos em tempo real.
 
-To start a local development server, run:
+## 🚀 Funcionalidades
 
-```bash
-ng serve
+🔎 Cadastro, Edição e Pesquisa de Pacientes: Registro completo com histórico clínico e dados de internação.
+
+📊 Geração de Relatórios: Análises sobre a evolução dos pacientes e eficácia dos tratamentos.
+
+🔄 Filtros e Busca Avançada: Filtragem por status de alta, setor e datas de internação e etc.
+
+🛠️ Tecnologias Utilizadas
+
+Frontend: Angular
+
+Backend: FAKE DB Json-Server _(BackEnd em .NEt em desenvolvimento)_
+
+Banco de Dados: MySQL Server _(Em desenvolvimento)_
+
+Outras: TypeScript, Bootstrap, PrimeNG
+
+## 📖 Como Executar o Projeto
+
+### 1️⃣ Clone o Repositório
+
+```
+git clone https://github.com/MeirelesRodrigo/FisioData.git
+cd fisioData
+```
+### 2️⃣ Instale as Dependências
+
+```
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 3️⃣ Execute Json-Server
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+json-server --watch db.json
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Acesse no navegador: `http://localhost:4200/`
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🎯 Telas do sistema
+### Login
+![login](login.png)
 
-To build the project run:
+### Cadastro
+![login](cadastro.png)
 
-```bash
-ng build
-```
+### Detalhes
+![Detalhes](detalhes.png)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Edição
+![Edição](edicao.png)
 
-## Running unit tests
+### Gráficos
+![Graficos](grafico1.png)
+![Graficos](grafico2.png)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-"# FisioData" 
+### 1️⃣ Próximas Atualizações
+- Integração com Backend .Net (C#)
+- Persistencia de dados com MySql
