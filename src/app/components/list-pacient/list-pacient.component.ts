@@ -9,10 +9,7 @@ import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponentComponent } from "../search-component/search-component.component";
 import { ToastModule } from 'primeng/toast';
-import { ModalComponentComponent } from "../modal-component/modal-component.component";
 import { Dialog } from 'primeng/dialog';
-import { LoginPageComponent } from "../login-page/login-page.component";
-import { faL } from '@fortawesome/free-solid-svg-icons';
 import { DetailComponentComponent } from "../detail-component/detail-component.component";
 
 @Component({
@@ -25,21 +22,19 @@ import { DetailComponentComponent } from "../detail-component/detail-component.c
     ReactiveFormsModule,
     SearchComponentComponent,
     ToastModule,
-    ModalComponentComponent,
     Dialog,
-    LoginPageComponent,
     DetailComponentComponent
 ],
   templateUrl: './list-pacient.component.html',
   styleUrl: './list-pacient.component.css'
 })
+
 export class ListPacientComponent implements OnInit{
   listPacients: Pacients[] = []
   allPacients: Pacients[] = []
   filterForm: FormGroup
   editModalVisible: boolean = false
   detailModalVisible: boolean = false
-
   itemSelect: string | null = null
 
   constructor(
@@ -60,12 +55,13 @@ export class ListPacientComponent implements OnInit{
   ngOnInit(): void{
     this.loadPacients();
   }
+
   loadPacients(){
     this.pacientsService.listAll().subscribe((listPacients) => {
-      this.listPacients = listPacients.sort((a, b ) =>
+      this.listPacients = listPacients.sort((b, a ) =>
       new Date(b.admissionDate).getTime() - new Date(a.admissionDate).getTime())
+      this.allPacients = [...this.listPacients]
     })
-    this.allPacients = [...this.listPacients]
   }
 
   searchPacients(filters: any): void {

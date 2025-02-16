@@ -1,13 +1,21 @@
-<nav *ngIf="!isLoginPage"  class="navbar" style="background-color: #597445;">
-  <button class="btn btn-custom-green" routerLink="/form">
-    <fa-icon [icon]="iconsService.faCirclePlus"></fa-icon>
-  </button>
-  <button class="btn btn-custom-green" routerLink="/listar">
-    <fa-icon [icon]="iconsService.faHospital"></fa-icon>
-  </button>
-  <button class="btn btn-custom-green" routerLink="/chart">
-    <fa-icon [icon]="iconsService.faChartPie"></fa-icon>
-  </button>
+<nav *ngIf="!isLoginPage" class="navbar" style="background-color: #597445;">
+  <div class="navbar-logo" >
+    <p>FisioData</p>
+  </div>
+
+  <div>
+    <button class="btn btn-custom-green" routerLink="/form">
+      <fa-icon [icon]="iconsService.faCirclePlus"></fa-icon>
+    </button>
+    <button class="btn btn-custom-green" routerLink="/listar">
+      <fa-icon [icon]="iconsService.faHospital"></fa-icon>
+    </button>
+    <button class="btn btn-custom-green" routerLink="/relatorio">
+      <fa-icon [icon]="iconsService.faChartPie"></fa-icon>
+    </button>
+  </div>
 </nav>
+
+
 
 <router-outlet></router-outlet>

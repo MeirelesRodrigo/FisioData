@@ -1,7 +1,8 @@
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
         Fitros
       </button>
     </h2>
@@ -19,7 +20,7 @@
             <div class="form-group col-md-2">
               <div class="form-group">
                 <label for="department">Setor</label>
-                  <select class="form-select" id="department" name="department" formControlName="department">
+                <select class="form-select" id="department" name="department" formControlName="department">
                   <option value="" selected disabled>Selecione...</option>
                   <option value="P1-Matriz">P1 - Matriz</option>
                   <option value="2º-Matriz">2º - Matriz</option>
@@ -34,18 +35,21 @@
 
             <div class="col-md-3">
               <label for="admissionDate">Período de internação (De)</label>
-              <input type="date"  id="admissionDate" name="admissionDate" class="form-control" formControlName="internacaoStart">
+              <input type="date" id="admissionDate" name="admissionDate" class="form-control"
+                formControlName="internacaoStart">
             </div>
 
 
             <div class="col-md-3">
               <label for="dischargeDate">Período de internação (Até)</label>
-              <input type="date"  id="dischargeDate" name="dischargeDate" class="form-control" formControlName="internacaoEnd">
+              <input type="date" id="dischargeDate" name="dischargeDate" class="form-control"
+                formControlName="internacaoEnd">
             </div>
 
             <div class="col-md-2">
               <label for="dischargeStatus">Alta / Status Paciente</label>
-              <select class="form-select" for="dischargeStatus" name="dischargeStatus"  formControlName="dischargeStatus">
+              <select class="form-select" for="dischargeStatus" name="dischargeStatus"
+                formControlName="dischargeStatus">
                 <option value="" selected disabled>Selecione...</option>
                 <option value="Internado">Paciente Internado</option>
                 <option value="Alta-Melhorada">Alta melhorada</option>
@@ -61,7 +65,7 @@
 
           <div class="d-flex justify-content-end mt-2">
             <button class="btn btn-custom-light-green" (click)="onClear()" value="Limpar">Limpar</button>
-            <button class="btn btn-custom-green ms-2" (click)="onSearch()" >Pesquisar</button>
+            <button class="btn btn-custom-green ms-2" (click)="onSearch()">Pesquisar</button>
           </div>
         </form>
       </div>

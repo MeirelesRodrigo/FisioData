@@ -1,10 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
-
-
-
-
 @Component({
   selector: 'app-search-component',
   imports: [ReactiveFormsModule],
@@ -19,20 +15,21 @@ export class SearchComponentComponent {
 
   constructor(
     private fb: FormBuilder
-  ){
+  ) {
     this.filterForm = this.fb.group({
-    name: [''],
-    department: [''],
-    dischargeStatus: [''],
-    internacaoStart: [''],
-    internacaoEnd: ['']
-  });}
+      name: [''],
+      department: [''],
+      dischargeStatus: [''],
+      internacaoStart: [''],
+      internacaoEnd: ['']
+    });
+  }
 
-  onSearch(): void{
+  onSearch(): void {
     this.search.emit(this.filterForm.value)
   }
 
-  onClear(): void{
+  onClear(): void {
     this.clear.emit();
     this.filterForm.reset();
   }

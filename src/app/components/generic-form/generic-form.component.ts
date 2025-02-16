@@ -37,7 +37,7 @@ export class GenericFormComponent implements OnInit, OnChanges {
     department: new FormControl('', Validators.required),
     insurance: new FormControl('', Validators.required),
     admissionDate: new FormControl<Date | null>(null, Validators.required),
-    dischargeDate: new FormControl<Date | null>(null, Validators.required),
+    dischargeDate: new FormControl<Date | null>(null),
     dischargeStatus: new FormControl('', Validators.required),
     specialist: new FormControl('', Validators.required),
     diagnoses: new FormControl('', Validators.required),

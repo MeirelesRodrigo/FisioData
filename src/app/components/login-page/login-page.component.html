@@ -13,9 +13,11 @@
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="password" placeholder="Digite sua senha" formControlName="password">
+          <input type="password" class="form-control" id="password" placeholder="Digite sua senha"
+            formControlName="password">
           <div *ngIf="loginForm.get('password')?.hasError && loginForm.get('password')?.touched">
-            <small class="error-mensage" *ngIf="loginForm.get('password')?.errors?.['required']">Campo obrigatório</small>
+            <small class="error-mensage" *ngIf="loginForm.get('password')?.errors?.['required']">Campo
+              obrigatório</small>
           </div>
         </div>
         <button type="submit" class="btn btn-custom-green w-100" [disabled]="loginForm.invalid">Entrar</button>

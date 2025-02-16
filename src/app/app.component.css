@@ -1,6 +1,12 @@
+.navbar-logo{
+  color: #ffffff;
+  display: flex;
+  padding-left: 20px;
+}
+
 .navbar{
   display: flex;
-  justify-content: flex-end;
+
   gap: 20px;
 }
 

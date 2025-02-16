@@ -8,7 +8,7 @@ import { CommonModule, DatePipe } from '@angular/common';
   templateUrl: './detail-component.component.html',
   styleUrl: './detail-component.component.css',
 })
-export class DetailComponentComponent implements OnInit{
+export class DetailComponentComponent implements OnInit {
   @Input() itemId!: string | null;
 
 
@@ -27,14 +27,13 @@ export class DetailComponentComponent implements OnInit{
   diagnoses: string = ''
   comorbidities: string = ''
 
-
   constructor(
-              private pacientsService: PacientsServiceService
-  ){}
+    private pacientsService: PacientsServiceService
+  ) { }
 
   ngOnInit(): void {
     console.log(this.itemId)
-    if(this.itemId){
+    if (this.itemId) {
       this.pacientsService.listPacientById(this.itemId).subscribe((response) => {
         console.log(response)
         this.name = response.name
