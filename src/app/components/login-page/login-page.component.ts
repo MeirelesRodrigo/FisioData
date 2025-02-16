@@ -19,17 +19,17 @@ export class LoginPageComponent {
     password: new FormControl('', Validators.required)
   })
 
-  constructor(private router : Router){}
+  constructor(private router: Router) { }
 
-  submit(){
-   const {user, password} = this.loginForm.value!
+  submit() {
+    const { user, password } = this.loginForm.value!
 
-   if((user === this.systemUser) && password === this.systemPassoword){
-    localStorage.setItem('auth', 'true')
-    console.log('LOGIN CERTO')
-    this.router.navigate(['listar'])
-   }else{
-    this.error = true
-   }
+    if ((user === this.systemUser) && password === this.systemPassoword) {
+      localStorage.setItem('auth', 'true')
+      console.log('LOGIN CERTO')
+      this.router.navigate(['listar'])
+    } else {
+      this.error = true
+    }
   }
 }
